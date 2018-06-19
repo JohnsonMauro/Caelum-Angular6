@@ -1,0 +1,20 @@
+<form (submit)="salvar($event)">
+  <div class="form-group">
+    <label for="title">Título</label>
+    <input type="text" class="form-control" id="title" name="titulo" placeholder="Digite o título" [(ngModel)]="foto.titulo">
+  </div>
+  <div class="form-group">
+    <label for="description">Descrição</label>
+    <input type="text" class="form-control" id="description" name="descricao" placeholder="Digite a descrição" [(ngModel)]="foto.descricao">
+  </div>
+  <div class="form-group">
+    <label for="url">URL</label>
+    <input type="text" class="form-control" id="url" name="url" placeholder="Digite a URL" [(ngModel)]="foto.url">
+  </div>
+
+  <button type="submit" class="btn btn-sm btn-success" [disabled]="(!foto.titulo || !foto.url)">Salvar</button>
+</form>
+
+<card titulo="{{ foto.titulo }}" *ng>
+  <foto url="{{ foto.url }}" titulo="{{ foto.titulo }}"></foto>
+</card>

@@ -1,0 +1,18 @@
+<header class="jumbotron">
+  <h1 class="text-center">Caelum Pic</h1>
+</header>
+
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Buscar...</label>
+    <input type="text" class="form-control" id="search" placeholder="Digite" #inputSearch (keyup)="0">
+  </div>
+</form>
+
+<div class="row">
+  <div class="col-12 my-1" *ngFor="let foto of fotos | filterItens: inputSearch.value">
+    <card titulo="{{ foto.titulo | uppercase }}">
+      <foto titulo="{{ foto.titulo }}" url="{{ foto.url }}"></foto>
+    </card>
+  </div>
+</div>
